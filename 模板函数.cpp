@@ -16,6 +16,15 @@ void mySwap(T &a, T &b){
 //     a = b;
 //     b = temp;
 // }
+// 可以这样写
+// template<typename T1, typename T2>
+// template<typename T1, typename T2>
+// void mySwap2(T1 &a, T2 &b){
+//     T2 temp = a;
+//     a = b;
+//     b = temp;
+// }        但是我这样写的两个T1 和 T2 类型 不能这样用模板函数，下面报错不知道为什么
+
 
 int main(){
     int a = 10;
@@ -29,6 +38,9 @@ int main(){
     cout << "a: " << a << ", b: " << b << endl;
 
     //mySwap(a, c);   // 错误的， 自动类型推导一定要推导出一致的
+
+    // cout << "xxx" << endl;
+    // mySwap2<int, double>(10, 10.11);
 
     system("pause");
     return 0;
